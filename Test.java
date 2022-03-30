@@ -4,8 +4,9 @@ public class Test {
 	      //static area
 		int a=10,b=20;   // local variables:- The variable defined inside the block, method and in constructor are called local variables
 		System.out.println(a+b);
-		Test t=new Test();
-        t.sampleMethod();
+		Test t=new Test();   // object creation
+        t.sampleMethod();   //JVM is responsible for execution of main method only if we don't call sampleMethod then JVM will not call it by itself
+		                    // to call user defined method object reference is needed 't' in this case
         System.out.println(t.a);  //Different area(static-instance) reference is required to access instance variables   		
 	}
 	void sampleMethod(){
