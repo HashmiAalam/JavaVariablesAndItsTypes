@@ -1,24 +1,17 @@
-//Use of Static and Instance variables 
-public class Test {
-	public static void main(String[] args){    //static method
-	   Employee employee1=new Employee(111,"alam","TCS");
-	  System.out.println("Employee id="+employee1.eid+ " Employee name="+employee1.ename+" Employee company="+employee1.ecompany);
-	  Employee employee2=new Employee(222,"wakeel","SBI");  //employee2 changes company name
-	  System.out.println("Employee id="+employee2.eid+ " Employee name="+employee2.ename+" Employee company="+employee2.ecompany);
-	  //since ecompany variable is static if new object(Employee) do any changes to company name than this change will reflact to all Employees
-	  System.out.println("Employee id="+employee1.eid+ " Employee name="+employee1.ename+" Employee company="+employee1.ecompany); //now employee1's company become SBI
-	  //Static variable is accessed by class name and class is one therefore memory location is same for static variable
+ //Two type of methods and all methods have 3 parts 1) method declaration 2) method implementation 3) method call 
+ public class Test {
+	 int a=10,b=30;
+	 //method:- methods are used for writing the logics of application
+	//static method
+	public static void main(String[] args){     //static method memory allocated with class loading so we can access static method via class 
+	Test t= new Test();
+	  System.out.println(t.a+t.b +" in static method");
+	  
+	  t.sampleMethod();   //3) method call 
+	  }
+	  //instance method 
+	  //1)method declaration
+	void sampleMethod(){   //instance method memory allocated when object is created so we can access these methods via object only e.g. it get called by 't'
+		System.out.println("Hi instance method");   //2) method implementation
 	}
-	
-}
-class Employee{
-	int eid;
-	String ename;
-	static String ecompany;
-	Employee(int eid,String ename,String ecompany){
-		this.eid=eid;
-		this.ename=ename;
-		this.ecompany=ecompany;
-		}
-	
 }
